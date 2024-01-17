@@ -1,12 +1,14 @@
 <?
 
-$count = 23;
-if($count >= 18) {
-    echo "Мальчику старше 18 лет";
-} elseif ($count >= 14) {
-    echo "Мальчику старше 14 лет";
+$weather = rand(1,4);
 
-} 
+if($weather == 1) {
+    echo "Идёт дождь наденьте куртку";
+} else if($weather == 2) {
+    echo "Идёт снег оденьтесь по теплее";
+} else if ($weather == 3){
+    echo "На улице ливень";
+}
 else {
-    echo "dfd";
+    echo "на улице тепло";
 }
