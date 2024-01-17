@@ -1,14 +1,23 @@
 <?
 
-$weather = rand(1,4);
+// for($i = 1; $i <= 10; $i++) {
+//     echo "<table>"
+//      . $i . 
+//     "</table>";
+// }
 
-if($weather == 1) {
-    echo "Идёт дождь наденьте куртку";
-} else if($weather == 2) {
-    echo "Идёт снег оденьтесь по теплее";
-} else if ($weather == 3){
-    echo "На улице ливень";
-}
-else {
-    echo "на улице тепло, возможно ветренно.";
+//таблица чисел
+
+$college = array(
+    "Students" => array("Никита", "Гена", "Стас", "Кто"),
+    "Teacher" => array("Никита Андреевич", "Крылова", "Чертвертнов", "Рыжков")
+);
+
+foreach($college as $people => $items) {
+    echo "<h1>$people</h1>";
+    echo "<ul>";
+    foreach($items as $item => $value){
+        echo "<li>$value</li>";
+    }
+    echo "</ul>";
 }
