@@ -26,3 +26,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\FrontendController::class, 'index'])->name('home');
 Route::get('/about', [\App\Http\Controllers\FrontendController::class, 'about'])->name('about');
 
+Route::get('/contacts', [\App\Http\Controllers\MainController::class, 'contacts'])->name('contacts');
+Route::get('/portfolio', [\App\Http\Controllers\MainController::class, 'portfolio'])->name('portfolio');
+Route::get('/price', [\App\Http\Controllers\MainController::class, 'price'])->name('price');
