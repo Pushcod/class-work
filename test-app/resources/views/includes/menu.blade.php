@@ -14,4 +14,7 @@
     <li>
         <a href="{{ route('price') }}">{{__('Цены')}}</a>
     </li>
+    <li>
+        <a href="{{ route('records') }}">{{__('Записи')}}</a>
+    </li>
 </ul>

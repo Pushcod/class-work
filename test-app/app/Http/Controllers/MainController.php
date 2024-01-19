@@ -17,4 +17,9 @@ class MainController extends Controller
     public function price(){
         return view('price');
     }
+
+    public  function records()
+    {
+        return view('records');
+    }
 }
