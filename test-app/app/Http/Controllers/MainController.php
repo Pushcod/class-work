@@ -22,4 +22,8 @@ class MainController extends Controller
     {
         return view('records');
     }
+    public  function infobike()
+    {
+        return view('infobike');
+    }
 }

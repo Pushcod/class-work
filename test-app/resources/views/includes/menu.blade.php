@@ -17,4 +17,7 @@
     <li>
         <a href="{{ route('records') }}">{{__('Записи')}}</a>
     </li>
+    <li>
+        <a href="{{ route('infobike') }}">{{__('Инфовел')}}</a>
+    </li>
 </ul>

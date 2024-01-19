@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('content')
 <div>
-    <ul style="display: grid; grid-template-columns: repeat(3, 2fr); background-color: lightgray ; margin: 0 ; padding: 0 ;">
+    <ul>
         <li>
             <div>
                 <img src="#" alt='картинка записей'>
