@@ -173,7 +173,7 @@ a {
     height: 100%;
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (4fr)[3];
+    /*grid-columns: (4fr)[3];*/
     grid-template-columns: repeat(3, 4fr);
     list-style-type: none;
     -webkit-box-pack: center;
@@ -183,7 +183,7 @@ a {
 }
 @media (max-width: 1024px) {
     .courses__list {
-        -ms-grid-columns: (4fr)[2];
+        /*-ms-grid-columns: (4fr)[2];*/
         grid-template-columns: repeat(2, 4fr);
         margin-bottom: 5%;
     }
@@ -241,33 +241,33 @@ a {
     padding: 2.5% 0;
     border-radius: 25px 25px 0 0;
 }
-.courses__img {
-    background-image: url("/assets/img/gallery/test1.webp");
-}
-.courses__img-2 {
-    background-image: url("/assets/img/gallery/Finans.webp");
-}
-.courses__img-3 {
-    background-image: url("/assets/img/gallery/Sport.webp");
-}
-.courses__img-4 {
-    background-image: url("/assets/img/gallery/files.webp");
-}
-.courses__img-5 {
-    background-image: url("/assets/img/gallery/Meha.webp");
-}
-.courses__img-6 {
-    background-image: url("/assets/img/gallery/automatic.webp");
-}
-.courses__img-7 {
-    background-image: url("/assets/img/gallery/grass.webp");
-}
-.courses__img-8 {
-    background-image: url("/assets/img/gallery/DPPPK.webp");
-}
-.courses__img-9 {
-    background-image: url("/assets/img/gallery/Miscellaneous.webp");
-}
+/*.courses__img {*/
+/*    background-image: url("/assets/img/gallery/test1.webp");*/
+/*}*/
+/*.courses__img-2 {*/
+/*    background-image: url("/assets/img/gallery/Finans.webp");*/
+/*}*/
+/*.courses__img-3 {*/
+/*    background-image: url("/assets/img/gallery/Sport.webp");*/
+/*}*/
+/*.courses__img-4 {*/
+/*    background-image: url("/assets/img/gallery/files.webp");*/
+/*}*/
+/*.courses__img-5 {*/
+/*    background-image: url("/assets/img/gallery/Meha.webp");*/
+/*}*/
+/*.courses__img-6 {*/
+/*    background-image: url("/assets/img/gallery/automatic.webp");*/
+/*}*/
+/*.courses__img-7 {*/
+/*    background-image: url("/assets/img/gallery/grass.webp");*/
+/*}*/
+/*.courses__img-8 {*/
+/*    background-image: url("/assets/img/gallery/DPPPK.webp");*/
+/*}*/
+/*.courses__img-9 {*/
+/*    background-image: url("/assets/img/gallery/Miscellaneous.webp");*/
+/*}*/
 .courses__h-img {
     font-size: 90px;
     background-color: rgba(0, 0, 0, 0.2);
