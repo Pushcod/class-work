@@ -12,7 +12,8 @@ class PostController extends Controller
      */
     public function index()
     {
-        return view('post.index');
+        $posts = Post::all();
+        return view('post.index', compact('posts'));
     }
 
     /**
@@ -31,7 +32,7 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'text' => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg,bmp,gif,svg|max"2048'
+            'image' => 'required|image|mimes:jpg,png,jpeg,bmp,gif,svg,tmp|max:2048'
         ]);
         $input = $request->all();
         //Здесь берем картинку из поля с name = image
