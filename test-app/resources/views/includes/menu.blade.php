@@ -20,4 +20,7 @@
     <li>
         <a href="{{ route('infobike') }}">{{__('Инфовел')}}</a>
     </li>
+    <li>
+        <a href="{{ route('post.index') }}">{{__('Все записи')}}</a>
+    </li>
 </ul>
