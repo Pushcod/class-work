@@ -32,15 +32,15 @@ class PostController extends Controller
         $request->validate([
             'title' => 'required',
             'text' => 'required',
-            'image' => 'required|image|mimes:jpg,png,jpeg,bmp,gif,svg,tmp|max:2048'
+            'image' => 'required|Image|mimes:jpg,png,jpeg,bmp,gif,svg,tmp|max:2048'
         ]);
         $input = $request->all();
         //Здесь берем картинку из поля с name = image
         if($image = $request->file('image')){
             $destionPath = 'images/';
-            $profileImage = date('YmHis') . '.' . $image->getClientOriginalExtension();
+            $profileImage = date('YmHis') . "." . $image->getClientOriginalExtension();
             $image->move($destionPath,$profileImage);
-            $input['$image'] = "$profileImage";
+            $input['image'] = "$profileImage";
         }
 
         Post::create($input);
@@ -58,17 +58,36 @@ class PostController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Post $post)
     {
-        return view('post.edit');
+
+        return view('post.edit', compact('post'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Post $post)
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'text' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        if($image = $request->file('image')){
+            $destionPath = 'images/';
+            $profileImage = date('YmHis') . "." . $image->getClientOriginalExtension();
+            $image->move($destionPath,$profileImage);
+            $input['image'] = "$profileImage";
+        }else{
+            unset($input['image']);
+        }
+
+        $post->update($input);
+
+        return redirect()->route('post.index')->with('success', 'Ваш пост обновлена');
     }
 
     /**
