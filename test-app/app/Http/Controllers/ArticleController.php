@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
+use App\Models\Article;
 use Illuminate\Http\Request;
 
-class PostController extends Controller
+class ArticleController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $posts = Post::all();
-        return view('post.index', compact('posts'));
+        $articles = Article::all();
+        return view('article.index', compact('articles'));
     }
 
     /**
@@ -21,7 +21,7 @@ class PostController extends Controller
      */
     public function create()
     {
-        return view('post.create');
+        return view('article.create');
     }
 
     /**
@@ -36,38 +36,38 @@ class PostController extends Controller
         ]);
         $input = $request->all();
         //Здесь берем картинку из поля с name = image
-        if($image = $request->file('image')){
+        if ($image = $request->file('image')) {
             $destionPath = 'images/';
             $profileImage = date('YmHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destionPath,$profileImage);
+            $image->move($destionPath, $profileImage);
             $input['image'] = "$profileImage";
         }
 
-        Post::create($input);
-        return redirect()->route('post.index')->with('success','Ваш пост был добавлен');
+        Article::create($input);
+        return redirect()->route('article.index')->with('success', 'Ваш пост был добавлен');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(Post $post)
+    public function show(Article $article)
     {
-        return view('post.show', compact('post'));
+        return view('article.show', compact('article'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Post $post)
+    public function edit(Article $article)
     {
 
-        return view('post.edit', compact('post'));
+        return view('article.edit', compact('article'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Post $post)
+    public function update(Request $request, Article $article)
     {
         $request->validate([
             'title' => 'required',
@@ -76,26 +76,27 @@ class PostController extends Controller
 
         $input = $request->all();
 
-        if($image = $request->file('image')){
+        if ($image = $request->file('image')) {
             $destionPath = 'images/';
             $profileImage = date('YmHis') . "." . $image->getClientOriginalExtension();
-            $image->move($destionPath,$profileImage);
+            $image->move($destionPath, $profileImage);
             $input['image'] = "$profileImage";
-        }else{
+        } else {
             unset($input['image']);
         }
 
-        $post->update($input);
+        $article->update($input);
 
-        return redirect()->route('post.index')->with('success', 'Ваш пост обновлена');
+        return redirect()->route('article.index')->with('success', 'Ваш пост обновлена');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(Article $article)
     {
-        $post->delete();
-        return redirect()->route('post.index')->with('success', 'Ваша запись пропала');
+        $article->delete();
+        return redirect()->route('article.index')->with('success', 'Ваша запись пропала');
     }
 }
+

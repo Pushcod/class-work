@@ -7,7 +7,7 @@
                 {{$message}}</div>
         @endif
        <div class="row">
-           <a href="{{ route('post.create') }}" class="btn btn-primary">{{ __('Новые записи')}}</a>
+           <a href="{{ route('article.create') }}" class="btn btn-primary">{{ __('Новые записи')}}</a>
        </div>
        <div class="row">
            <table class="table">
@@ -21,17 +21,17 @@
                </tr>
                </thead>
                <tbody>
-               @forelse($posts as $post)
+               @forelse($articles as $article)
                    <tr>
-                       <th scope="row">{{$post->id}}</th>
-                       <td>{{$post->title}}</td>
-                       <td>{{$post->text}}</td>
-                       <td><img width="150" height="150" src="/images/{{$post->image}}"></td>
+                       <th scope="row">{{$article->id}}</th>
+                       <td>{{$article->title}}</td>
+                       <td>{{$article->text}}</td>
+                       <td><img width="150" height="150" src="/images/{{$article->image}}"></td>
                        <td>
-                           <a href="{{route('post.edit', $post->id)}}" class="btn btn-success">{{ __('Редактировать') }}</a>
-                           <a href="{{route('post.show', $post->id)}}" class="btn btn-warning">Подробнее</a>
+                           <a href="{{route('article.edit', $article->id)}}" class="btn btn-success">{{ __('Редактировать') }}</a>
+                           <a href="{{route('article.show', $article->id)}}" class="btn btn-warning">Подробнее</a>
 
-                           <form method="POST" action="{{route('post.delete', $post->id)}}">
+                           <form method="ARTICLE" action="{{route('article.delete', $article->id)}}">
                                @csrf
                                @method('DELETE')
                                <button type="submit" class="btn btn-danger">Удалить</button>
