@@ -13,7 +13,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        return view('category.index');
+        $categories = Category::all();
+        return view('category.index', compact('categories'));
     }
 
     /**
@@ -29,7 +30,16 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'text' => 'required',
+            'is_active' => 'required'
+        ]);
+
+        $input = $request->all();
+
+        Category::create($input);
+        return redirect()->route('category.index')->with('success','Категоря успешно создана');
     }
 
     /**
