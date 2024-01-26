@@ -40,6 +40,7 @@
                        <td>
                            <img width="150" height="150" src="/images/products/{{$product->image}}">
                        </td>
+
                        <td>
                            @if($product->is_active == 0)
                                <div class="alert alert-danger text-center">
@@ -51,6 +52,16 @@
                                </div>
 
                            @endif
+                       </td>
+                       <td>
+                           <a href="{{route('tovar.edit', $product->id)}}" class="btn btn-success">{{ __('Редактировать') }}</a>
+                           <a href="{{route('tovar.show', $product->id)}}" class="btn btn-warning">Подробнее</a>
+
+                           <form method="POST" action="{{route('tovar.delete', $product->id)}}">
+                               @csrf
+                               @method('DELETE')
+                               <button type="submit" class="btn btn-danger">Удалить</button>
+                           </form>
                        </td>
                    </tr>
                @empty
