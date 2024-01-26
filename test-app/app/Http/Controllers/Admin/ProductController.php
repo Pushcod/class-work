@@ -82,7 +82,7 @@ class ProductController extends Controller
             'text' => 'required',
             'is_active'=>'required',
             'category_id'=>'required',
-            'image' => 'required|Image|mimes:jpg,png,jpeg,bmp,gif,svg,tmp|max:2048'
+
         ]);
 
         $input = $request->all();
