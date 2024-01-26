@@ -59,3 +59,11 @@ Route::prefix('/category')->group(function () {
     Route::get('/show/{category}', [\App\Http\Controllers\Admin\CategoryController::class, 'show'])->name('category.show');
     Route::post('/store', [\App\Http\Controllers\Admin\CategoryController::class, 'store'])->name('category.store');
 });
+
+Route::prefix('/tovar')->group(function () {
+    Route::get('/index', [\App\Http\Controllers\Admin\ProductController::class, 'index'])->name('tovar.index');
+    Route::get('/create', [\App\Http\Controllers\Admin\ProductController::class, 'create'])->name('tovar.create');
+    Route::get('/edit/{tovar}', [\App\Http\Controllers\Admin\ProductController::class, 'edit'])->name('tovar.edit');
+    Route::get('/show/{tovar}', [\App\Http\Controllers\Admin\ProductController::class, 'show'])->name('tovar.show');
+    Route::post('/store', [\App\Http\Controllers\Admin\ProductController::class, 'store'])->name('tovar.store');
+});
