@@ -1,4 +1,10 @@
 <ul>
+{{--    <li>--}}
+{{--        <a href="{{ route('product') }}">{{__('Продукты')}}</a>--}}
+{{--    </li>--}}
+    <li>
+        <a href="{{ route('category') }}">{{__('Категории')}}</a>
+    </li>
     <li>
         <a href="{{ route('infobike') }}">{{__('Инфовел')}}</a>
     </li>

@@ -25,6 +25,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\FrontendController::class, 'index'])->name('home');
 Route::get('/about', [\App\Http\Controllers\FrontendController::class, 'about'])->name('about');
+Route::get('/category', [\App\Http\Controllers\FrontendController::class, 'category'])->name('category');
+Route::get('/products/{id}', [\App\Http\Controllers\FrontendController::class, 'products'])->name('products');
+Route::get('/product-card/{id}', [\App\Http\Controllers\FrontendController::class, 'product'])->name('product');
+
 
 Route::get('/contacts', [\App\Http\Controllers\MainController::class, 'contacts'])->name('contacts');
 Route::get('/portfolio', [\App\Http\Controllers\MainController::class, 'portfolio'])->name('portfolio');
